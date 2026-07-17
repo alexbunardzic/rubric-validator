@@ -1,4 +1,4 @@
-import { Validator } from './validator';
+import { Validator } from './validator.js';
 
 function main() {
   const rubricRoot = process.argv[2] || '.';

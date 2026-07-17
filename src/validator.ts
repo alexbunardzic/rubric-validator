@@ -1,21 +1,21 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { Criterion, Violation } from './core/types';
-import { parseCriterionFile } from './parsers/criterion';
-import { parseGlossaryAnchors } from './parsers/glossary';
-import { parseThresholds } from './parsers/thresholds';
-import { validateFrontmatter } from './rules/r01';
-import { validateBodySections } from './rules/r02';
-import { validateIds } from './rules/r03';
-import { validateGroundedExamples } from './rules/r04';
-import { validateSubstantiveFailurePattern } from './rules/r05';
-import { validateCrossReferences } from './rules/r06';
-import { validateBindingDependencies } from './rules/r07';
-import { validateCoreSetClosure } from './rules/r08';
-import { validateGlossaryAnchors } from './rules/r09';
-import { validateMaterialTermLinking } from './rules/r10';
-import { validateThresholdConsistency } from './rules/r11';
-import { validateCoreSetEquality } from './rules/r12';
+import { Criterion, Violation } from './core/types.js';
+import { parseCriterionFile } from './parsers/criterion.js';
+import { parseGlossaryAnchors } from './parsers/glossary.js';
+import { parseThresholds } from './parsers/thresholds.js';
+import { validateFrontmatter } from './rules/r01.js';
+import { validateBodySections } from './rules/r02.js';
+import { validateIds } from './rules/r03.js';
+import { validateGroundedExamples } from './rules/r04.js';
+import { validateSubstantiveFailurePattern } from './rules/r05.js';
+import { validateCrossReferences } from './rules/r06.js';
+import { validateBindingDependencies } from './rules/r07.js';
+import { validateCoreSetClosure } from './rules/r08.js';
+import { validateGlossaryAnchors } from './rules/r09.js';
+import { validateMaterialTermLinking } from './rules/r10.js';
+import { validateThresholdConsistency } from './rules/r11.js';
+import { validateCoreSetEquality } from './rules/r12.js';
 
 export class Validator {
   private rubricRoot: string;
@@ -36,10 +36,10 @@ export class Validator {
 
     // Load glossary and thresholds
     const glossaryAnchors = parseGlossaryAnchors(
-      path.join(this.rubricRoot, 'glossary.md')
+      path.join(this.rubricRoot, 'rubric', 'glossary.md')
     );
     const thresholdsContent = this.readFile(
-      path.join(this.rubricRoot, 'thresholds.md')
+      path.join(this.rubricRoot, 'rubric', 'thresholds.md')
     );
     const thresholdEntries = thresholdsContent
       ? parseThresholds(thresholdsContent)
