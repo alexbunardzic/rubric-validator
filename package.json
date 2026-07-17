@@ -4,6 +4,9 @@
   "description": "Validates ACG Rubric criterion files against structural rules",
   "type": "module",
   "main": "dist/index.js",
+  "bin": {
+    "rubric-validator": "dist/index.js"
+  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",

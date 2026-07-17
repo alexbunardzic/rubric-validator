@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { Validator } from './validator.js';
 
 function main() {
